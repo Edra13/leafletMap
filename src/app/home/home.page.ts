@@ -59,8 +59,16 @@ export class HomePage {
     // Kontrol layer
     L.control.layers(baseMaps).addTo(this.map);
 
-    // Tambahkan marker
-    this.marker = L.marker([-7.816795, 110.365229]).addTo(this.map);
+    // Marker custom dengan icon sendiri
+    const customIcon = L.icon({
+      iconUrl: 'assets/icon/Marker.png', // Path ke file icon
+      iconSize: [38, 38], // Ukuran ikon
+      iconAnchor: [19, 38], // Anchor point di bawah ikon
+      popupAnchor: [0, -38], // Posisi popup relatif terhadap ikon
+    });
+
+    // Tambahkan marker dengan ikon custom
+    this.marker = L.marker([-7.816795, 110.365229], { icon: customIcon }).addTo(this.map);
     this.marker.bindPopup('Hi, this is my home!').openPopup();
   }
 }
