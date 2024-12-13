@@ -123,7 +123,7 @@ export class HomePage {
     };
 
     // Tambahkan layer pertama sebagai default
-    basemap1.addTo(this.map);
+    basemap2.addTo(this.map);
 
     // Kontrol layer
     L.control.layers(baseMaps).addTo(this.map);
