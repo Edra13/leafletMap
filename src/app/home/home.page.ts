@@ -155,6 +155,19 @@ export class HomePage {
     `;    
       marker.bindPopup(popupContent);
     });
-  
+
+     // Menambahkan gambar sebagai ikon marker
+    const airportIcon = L.icon({
+      iconUrl: 'assets/icon/Airport.png', // Ganti dengan path gambar Anda
+      iconSize: [38, 38], // Ukuran ikon
+      iconAnchor: [19, 38], // Anchor point di bawah ikon
+      popupAnchor: [0, -38], // Posisi popup relatif terhadap ikon
+    });
+
+    // Menambahkan marker dengan ikon kustom
+    const airportLatitude = -8.7614225;
+    const airportLongitude = 116.2732037;
+    L.marker([airportLatitude, airportLongitude], { icon: airportIcon }).addTo(this.map)
+      .bindPopup('Lombok International Airport');
   }
 }
