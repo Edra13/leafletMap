@@ -98,7 +98,7 @@ export class HomePage {
   ngOnInit() {}
 
   ionViewDidEnter() {
-    this.map = L.map('mapId').setView([-8.587049, 116.380034], 10);
+    this.map = L.map('mapId').setView([-8.587049, 116.380034], 9);
 
     // Basemap pertama (OpenStreetMap)
     const basemap1 = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
